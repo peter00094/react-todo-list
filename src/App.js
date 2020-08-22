@@ -26,7 +26,7 @@ class App extends Component {
     e.preventDefault();//取消事件 但仍會傳遞
     
     if(this.state.item===""){//防呆
-      alert("請輸入值")
+      alert("The input field cannot be empty!")
     }
     else{
       const newItem = {
@@ -86,6 +86,7 @@ class App extends Component {
               clearList={this.clearList}
               handleDelete={this.handleDelete}
               handleEdit={this.handleEdit}
+              editItem={this.state.editItem}
             />
           </div>
         </div>

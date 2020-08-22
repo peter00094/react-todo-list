@@ -14,9 +14,10 @@ export default class TodoInput extends Component {
                         </div>
                         <input type="text" //輸入欄位
                          className="form-control text-capitalize" 
-                         placeholder="add a todo item"
+                         placeholder="add a todo item (Maximum 15 characters)"
                          value={item}
                          onChange={handleChange}
+                         maxLength="15"
                          />
                     </div>
                     <button type="submit" 
@@ -25,7 +26,7 @@ export default class TodoInput extends Component {
                         "btn btn-block btn-success mt-3":
                         "btn btn-block btn-primary mt-3"
                     }>
-                    {editItem ? 'edit item': "add item" }   
+                    {editItem ? 'edit item': "Add Item" }   
                     </button>
                 </form>
             </div>

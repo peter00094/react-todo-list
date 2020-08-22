@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TodoItem from './TodoItem'
 export default class TodoList extends Component {
     render() {
-        const { items, clearList, handleDelete, handleEdit} = this.props;//解構取值
+        const { items, clearList, handleDelete, handleEdit,editItem} = this.props;//解構取值
         return (
             <ul className="list-group my-5">
                 <h3 className="text-capitalize text-center">todo 
@@ -15,7 +15,7 @@ export default class TodoList extends Component {
                                 title={item.title}
                                 handleDelete={()=>handleDelete(item.id)}
                                 handleEdit={()=>handleEdit(item.id)}
-                                
+                                editItem={editItem}
                             />
                      )
                     })
