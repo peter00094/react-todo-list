@@ -5,19 +5,19 @@ export default class TodoList extends Component {
         const { items, clearList, handleDelete, handleEdit} = this.props;//解構取值
         return (
             <ul className="list-group my-5">
-                <h3 className="text-capitalize text-center">todo
+                <h3 className="text-capitalize text-center">todo 
                 list</h3>
                 {
                     items.map(item => {
-                        return (
-                            <TodoItem
+                     return (    
+                          <TodoItem
                                 key={item.id}
                                 title={item.title}
                                 handleDelete={()=>handleDelete(item.id)}
                                 handleEdit={()=>handleEdit(item.id)}
-
+                                
                             />
-                        )
+                     )
                     })
                 }
                 <button //清空

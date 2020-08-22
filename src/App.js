@@ -24,18 +24,26 @@ class App extends Component {
 
   handleSubmit = (e) => {//新增
     e.preventDefault();//取消事件 但仍會傳遞
-    const newItem = {
-      id: this.state.id,
-      title: this.state.item
+    
+    if(this.state.item===""){//防呆
+      alert("請輸入值")
     }
-    const updatedItems = [...this.state.items, newItem];
-    this.setState({
-      items: updatedItems,
-      item: '',
-      id: uuid(),
-      editItem: false
-    });
+    else{
+      const newItem = {
+        id: this.state.id,
+        title: this.state.item
+      }
+      const updatedItems = [...this.state.items, newItem];
+      this.setState({
+        items: updatedItems,
+        item: '',
+        id: uuid(),
+        editItem: false,
+      });
+    }
   }
+
+
   clearList = () => {//清空
     this.setState({
       items: []
